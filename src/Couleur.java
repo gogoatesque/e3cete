@@ -5,5 +5,5 @@ public enum Couleur {
      * En plus de donner une liste énumérative des couleurs possibles,
      * cette enumération doit permettre à la méthode toString d'une Carte de réaliser un affichage en couleur.
      */
-
+    ROUGE, VERTE, BLEUE
 }

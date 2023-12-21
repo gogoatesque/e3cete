@@ -133,7 +133,7 @@ public class Paquet {
      * Résultat : Vrai s'il reste assez de cartes dans le paquet pour piocher nbCartes.
      */
 
-    public boolean peutPicoher(int nbCartes) {
+    public boolean peutPiocher(int nbCartes) {
         throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
     }
 
