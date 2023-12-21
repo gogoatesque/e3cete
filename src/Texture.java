@@ -3,5 +3,5 @@ public enum Texture {
     /**
      * Représente la texture d'une Carte : pleine , à pois...
      */
-    PLEINE, VIDE, HACHUREE
+    PLEINE, VIDE, HACHUREE;
 }

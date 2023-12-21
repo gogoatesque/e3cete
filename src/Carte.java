@@ -13,9 +13,16 @@ public class Carte  {
      * Action : Construit une carte contenant nbFigures "figures" qui possèdent une "texture" et une "couleur"
      * Exemple : new Carte(Couleur.ROUGE, 2, Figure.OVALE, Texture.PLEIN) représente une carte contenant 2 figures ovales rouge et pleines
      */
+    private Couleur couleur;
+    private int nbFigures;
+    private Figure figure;
+    private Texture texture;
 
     public Carte(Couleur couleur, int nbFigures, Figure figure, Texture texture) {
-
+        this.couleur = couleur;
+        this.nbFigures = nbFigures;
+        this.figure = figure;
+        this.texture = texture;
     }
 
     /**
@@ -23,7 +30,7 @@ public class Carte  {
      */
 
     public int getNbFigures() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+        return this.nbFigures;
     }
 
     /**
@@ -31,7 +38,7 @@ public class Carte  {
      */
 
     public Figure getFigure() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+        return this.figure;
     }
 
     /**
@@ -39,7 +46,7 @@ public class Carte  {
      */
 
     public Couleur getCouleur() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+        return this.couleur;
     }
 
     /**
@@ -47,7 +54,7 @@ public class Carte  {
      */
 
     public Texture getTexture() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+        return this.texture;
     }
 
     /**
@@ -70,7 +77,17 @@ public class Carte  {
      */
 
     public int compareTo(Carte carte) {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+        if (this.couleur.ordinal() > carte.couleur.ordinal() || 
+        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures > carte.nbFigures) || 
+        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() > carte.figure.ordinal()) ||
+        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() == carte.figure.ordinal() && this.texture.ordinal() > carte.texture.ordinal()))
+        {return 1;}
+        else if (this.couleur.ordinal() < carte.couleur.ordinal() || 
+        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures < carte.nbFigures) || 
+        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() < carte.figure.ordinal()) ||
+        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() == carte.figure.ordinal() && this.texture.ordinal() < carte.texture.ordinal()))
+        {return -1;}
+        else return 0;
     }
 
     /**
@@ -83,7 +100,6 @@ public class Carte  {
 
     @Override
     public String toString() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+        return (this.couleur.toString() + "Carte " + this.figure + " répétée " + this.nbFigures + " fois de texture " + this.texture);
     }
-
 }
