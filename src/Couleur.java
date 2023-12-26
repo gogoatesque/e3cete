@@ -15,7 +15,7 @@ public enum Couleur {
         this.couleur = c;
     }
 
-    public String toString() {
+    public String getCode() {
         return this.couleur;
     }
 }

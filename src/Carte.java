@@ -82,8 +82,8 @@ public class Carte  {
         (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() > carte.figure.ordinal()) ||
         (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() == carte.figure.ordinal() && this.texture.ordinal() > carte.texture.ordinal()))
         {return 1;}
-        else if (this.couleur.ordinal() < carte.couleur.ordinal() || 
-        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures < carte.nbFigures) || 
+        else if (this.couleur.ordinal() < carte.couleur.ordinal() ||
+        (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures < carte.nbFigures) ||
         (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() < carte.figure.ordinal()) ||
         (this.couleur.ordinal() ==  carte.couleur.ordinal() && this.nbFigures == carte.nbFigures && this.figure.ordinal() == carte.figure.ordinal() && this.texture.ordinal() < carte.texture.ordinal()))
         {return -1;}
@@ -100,6 +100,6 @@ public class Carte  {
 
     @Override
     public String toString() {
-        return (this.couleur.toString() + "Carte " + this.figure + " répétée " + this.nbFigures + " fois de texture " + this.texture);
+        return (this.couleur.getCode() + "Carte " + this.figure + " répétée " + this.nbFigures + " fois de texture " + this.texture);
     }
 }
